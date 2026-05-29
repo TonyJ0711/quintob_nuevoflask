@@ -5,10 +5,10 @@ FROM python:3.12-alpine
 WORKDIR /app
 
 #Paso 3 Copiar el archivo de dependencias 
-COPY requirements.txt /app
+COPY requeriments.txt /app
 
 #Paso 4 Instalar las dependencias
-RUN pip install --no-cache-dir -r requirements.txt 
+RUN pip install --no-cache-dir -r requeriments.txt 
 
 #Paso 5 Copiar el código fuente
 COPY app.py /app
