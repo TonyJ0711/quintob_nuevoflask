@@ -8,18 +8,18 @@ service:
   deploy: 
     replicas: 1
   labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.antony.entrypoints=http"
-        - "traefik.http.routers.antony.rule=Host(antony.byronrm.com)"
-        - "traefik.http.middlewares.antony-https-redirect.redirectscheme.scheme=https"
-        - "traefik.http.routers.antony.middlewares=antony-https-redirect"
-        - "traefik.http.routers.antony-secure.entrypoints=https"
-        - "traefik.http.routers.antony-secure.rule=Host(antony.byronrm.com)"
-        - "traefik.http.routers.antony-secure.tls=true"
-        - "traefik.http.routers.antony-secure.tls.certresolver=http"
-        - "traefik.http.routers.antony-secure.service=antony"
-        - "traefik.http.services.antony.loadbalancer.server.port=5000"
-        - "traefik.docker.network=traefik-public"
+    - "traefik.enable=true"
+    - "traefik.http.routers.antony.entrypoints=http"
+    - "traefik.http.routers.antony.rule=Host(antony.byronrm.com)"
+    - "traefik.http.middlewares.antony-https-redirect.redirectscheme.scheme=https"
+    - "traefik.http.routers.antony.middlewares=antony-https-redirect"
+    - "traefik.http.routers.antony-secure.entrypoints=https"
+    - "traefik.http.routers.antony-secure.rule=Host(antony.byronrm.com)"
+    - "traefik.http.routers.antony-secure.tls=true"
+    - "traefik.http.routers.antony-secure.tls.certresolver=http"
+    - "traefik.http.routers.antony-secure.service=antony"
+    - "traefik.http.services.antony.loadbalancer.server.port=5000"
+    - "traefik.docker.network=traefik-public"
 
 networks:
  traefik-public:
