@@ -34,10 +34,10 @@ jobs:
     - name: Mostrar variables o secrets 
       run: |
            echo "Probando servidor ssh"
-           echo "Host: ${{ secrets.VPS_HOST }}"
-           echo "User: ${{ secrets.VPS_USER }}"
-           echo "Port: ${{ secrets.VPS_SSH_PORT }}"
-           echo "Password: ${{ secrets.VPS_PASSWORD }}"
+           echo "Host: ${{secrets.VPS_HOST}}"
+           echo "User: ${{secrets.VPS_USER}}"
+           echo "Port: ${{secrets.VPS_SSH_PORT}}"
+           echo "Password: ${{secrets.VPS_PASSWORD}}"
 
     - name: Probar conexion ssh
       uses: appleboy/ssh-action@v1 
@@ -49,5 +49,5 @@ jobs:
         script: |
           echo "Conexion ssh exitosa"
           touch ejemplo.txt
-          
+
 
