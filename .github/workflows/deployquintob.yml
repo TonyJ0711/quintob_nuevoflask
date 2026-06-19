@@ -40,7 +40,7 @@ jobs:
            echo "Password: ${{ secrets.VPS_PASSWORD }}"
 
     - name: Probar conexion ssh
-      uses: applebloy/ssh-actions@v1 
+      uses: appleboy/ssh-actions@v1 
       with: 
         host: ${{secrets.VPS_HOST}}
         username: ${{secrets.VPS_USER}}
@@ -49,4 +49,4 @@ jobs:
         script: |
           echo "Conexion ssh exitosa"
           touch ejemplo.txt
-          
+
