@@ -31,4 +31,22 @@ jobs:
 
     - name: Publicar la imagen 
       run: docker push ghcr.io/tonyj0711/holaflask:1.0.0
+    - name: Mostrar variables o secrets 
+      run: |
+           echo "Probando servidor ssh"
+           echo "Host: ${{ secrets.VPS_HOST }}"
+           echo "User: ${{ secrets.VPS_USER }}"
+           echo "Port: ${{ secrets.VPS_SSH_PORT }}"
+           echo "Password: ${{ secrets.VPS_PASSWORD }}"
 
+    - name: Probar conexion ssh
+      uses: applebloy/ssh-actions@v1 
+      with: 
+        host: ${{secrets.VPS_HOST}}
+        username: ${{secrets.VPS_USER}}
+        password: ${{secrets.VPS_PASSWORD}}
+        port: ${{secrets.VPS_SSH_PORT}} 
+        script: |
+          echo "Conexion ssh exitosa"
+          touch ejemplo.txt
+          
