@@ -60,16 +60,17 @@ jobs:
         source: "stack.yml,Makefile" 
         target: "/home/${{secrets.VPS_USER}}/landingb"
 
+    
     - name: Desplegando servicios
       uses: appleboy/ssh-action@v1 
       with: 
-        host: ${{secrets.VPS_HOST}}
-        username: ${{secrets.VPS_USER}}
-        password: ${{secrets.VPS_PASSWORD}}
-        port: ${{secrets.VPS_SSH_PORT}} 
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USER }}
+        password: ${{ secrets.VPS_PASSWORD }}
+        port: ${{ secrets.VPS_SSH_PORT }} 
         script: |
-          echo: "Desplegando servicios"
-          cd: ~/landingb
+          echo "Desplegando servicios"
+          cd ~/landingb
           docker pull ghcr.io/tonyj0711/holaflask:1.0.0
           docker stack deploy -c stack.yml borrar
       
