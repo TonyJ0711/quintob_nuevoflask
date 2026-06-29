@@ -9,8 +9,7 @@ services:
 
     deploy:
       replicas: 1
-
-    labels:
+      labels:
         - "traefik.enable=true"
         - "traefik.http.routers.antony.entrypoints=http"
         - "traefik.http.routers.antony.rule=Host(`antony.byronrm.com`)"
