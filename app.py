@@ -80,7 +80,7 @@ HTML = """
 
     {% if nombre %}
     <div class="resultado">
-        <h3>Hola, {{ nombre }} 👋Hola </h3>
+        <h3>Hola, {{ nombre }} 👋HolaASDASD </h3>
         <p>Bienvenido a Flask.</p>
     </div>
     {% endif %}
